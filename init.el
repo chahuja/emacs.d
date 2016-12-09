@@ -77,9 +77,6 @@
 ;; org Mode
 (require 'org-list)
 
-;; bitlbee initialize
-(load "~/.emacs.d/chat_along.el")
-
 ;; weechat init
 (require 'weechat)
 
@@ -112,10 +109,16 @@
 (eval-after-load "company"
  '(add-to-list 'company-backends '(company-anaconda :with company-capf)))
 
-
-
-
-
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; undo tree mode                                                         ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;turn on everywhere
+(global-undo-tree-mode 1)
+;; make ctrl-z undo
+(global-set-key (kbd "C-z") 'undo)
+;; make ctrl-Z redo
+(defalias 'redo 'undo-tree-redo)
+(global-set-key (kbd "C-S-z") 'redo)
 
 
 
@@ -132,16 +135,20 @@
  '(custom-enabled-themes (quote (wombat)))
  '(custom-safe-themes
    (quote
-    ("1ac9a474d289e6a44894d1b484b3aa5eb345cea6ed6f32ec5214c797ac7ddf23" "4c0ca36491835b270549ed8c14590173df08e5c38465d747e5431ba5a490ccf2" "adbe7ba38c551281f21d760de0840cab0e1259964075a7e46cc2b9fdea4b82d6" "fcbd15014e7b8f2fc8c565f0c374ce7813dcad83b1aea5c547e144edbbcd51f8" "c7c59b971750a2d971ebfc4a28d0a39442df3b919e2a65d34d95bbe1707370c0" "4e753673a37c71b07e3026be75dc6af3efbac5ce335f3707b7d6a110ecb636a3" "bcc6775934c9adf5f3bd1f428326ce0dcd34d743a92df48c128e6438b815b44f" default)))
+    ("98cc377af705c0f2133bb6d340bf0becd08944a588804ee655809da5d8140de6" "1ac9a474d289e6a44894d1b484b3aa5eb345cea6ed6f32ec5214c797ac7ddf23" "4c0ca36491835b270549ed8c14590173df08e5c38465d747e5431ba5a490ccf2" "adbe7ba38c551281f21d760de0840cab0e1259964075a7e46cc2b9fdea4b82d6" "fcbd15014e7b8f2fc8c565f0c374ce7813dcad83b1aea5c547e144edbbcd51f8" "c7c59b971750a2d971ebfc4a28d0a39442df3b919e2a65d34d95bbe1707370c0" "4e753673a37c71b07e3026be75dc6af3efbac5ce335f3707b7d6a110ecb636a3" "bcc6775934c9adf5f3bd1f428326ce0dcd34d743a92df48c128e6438b815b44f" default)))
  '(custom-theme-load-path
    (quote
-    ("/home/chahuja/.emacs.d/elpa/hc-zenburn-theme-20150928.933/" "/home/chahuja/.emacs.d/elpa/zenburn-theme-20161018.437/" custom-theme-directory t "~/.emacs.d/themes")))
+    ("/home/chahuja/.emacs.d/elpa/hc-zenburn-theme-20150928.933/" "/home/chahuja/.emacs.d/elpa/zenburn-theme-20161018.437/" custom-theme-directory t "~/.emacs.d/themes")) t)
  '(fci-rule-character-color "#192028")
  '(fci-rule-color "#5E5E5E")
+ '(hl-sexp-background-color "#1c1f26")
  '(nrepl-message-colors
    (quote
     ("#CC9393" "#DFAF8F" "#F0DFAF" "#7F9F7F" "#BFEBBF" "#93E0E3" "#94BFF3" "#DC8CC3")))
  '(org-agenda-files (quote ("~/Desktop/test_todo.org")))
+ '(package-selected-packages
+   (quote
+    (undo-tree material-theme magic-latex-buffer ido-vertical-mode zoom-window zenburn-theme weechat wcheck-mode smex org matlab-mode markdown-mode magit lua-mode jedi ido-ubiquitous ibuffer-vc ibuffer-git hc-zenburn-theme fic-mode exec-path-from-shell ess dictionary company-anaconda bitlbee auto-complete-auctex auctex 2048-game)))
  '(pdf-view-midnight-colors (quote ("#DCDCCC" . "#383838")))
  '(vc-annotate-background "#202020")
  '(vc-annotate-color-map
