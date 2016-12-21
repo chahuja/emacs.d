@@ -109,6 +109,9 @@
 (eval-after-load "company"
  '(add-to-list 'company-backends '(company-anaconda :with company-capf)))
 
+;; setting default indent value to 2
+(set-variable 'python-indent-offset 2)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; undo tree mode                                                         ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -119,7 +122,6 @@
 ;; make ctrl-Z redo
 (defalias 'redo 'undo-tree-redo)
 (global-set-key (kbd "C-S-z") 'redo)
-
 
 
 
@@ -148,7 +150,7 @@
  '(org-agenda-files (quote ("~/Desktop/test_todo.org")))
  '(package-selected-packages
    (quote
-    (undo-tree material-theme magic-latex-buffer ido-vertical-mode zoom-window zenburn-theme weechat wcheck-mode smex org matlab-mode markdown-mode magit lua-mode jedi ido-ubiquitous ibuffer-vc ibuffer-git hc-zenburn-theme fic-mode exec-path-from-shell ess dictionary company-anaconda bitlbee auto-complete-auctex auctex 2048-game)))
+    (neotree undo-tree material-theme magic-latex-buffer ido-vertical-mode zoom-window zenburn-theme weechat wcheck-mode smex org matlab-mode markdown-mode magit lua-mode jedi ido-ubiquitous ibuffer-vc ibuffer-git hc-zenburn-theme fic-mode exec-path-from-shell ess dictionary company-anaconda bitlbee auto-complete-auctex auctex 2048-game)))
  '(pdf-view-midnight-colors (quote ("#DCDCCC" . "#383838")))
  '(vc-annotate-background "#202020")
  '(vc-annotate-color-map
